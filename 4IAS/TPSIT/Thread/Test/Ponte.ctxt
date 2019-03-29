@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Ponte
+comment1.params=nome
+comment1.target=void\ p(java.lang.String)
+comment2.params=nome
+comment2.target=void\ v(java.lang.String)
+numComments=3

@@ -1,0 +1,27 @@
+#BlueJ class context
+comment0.target=AziendaSanitaria
+comment1.params=
+comment1.target=AziendaSanitaria()
+comment10.params=m
+comment10.target=int\ getNumPazienti(Medico)
+comment11.params=
+comment11.target=int\ trovaIndiceMedicoIncasinato()
+comment12.params=unNumeroTessera
+comment12.target=int\ trovaPosizionePaziente(int)
+comment2.params=unNomeMedico
+comment2.target=Medico\ trovaMedico(java.lang.String)
+comment3.params=unNomeMedico
+comment3.target=void\ aggMedico(java.lang.String)
+comment4.params=unNomeMedico
+comment4.target=boolean\ exists(java.lang.String)
+comment5.params=unNumeroTessera
+comment5.target=void\ eliminaPaziente(int)
+comment6.params=unNumeroTessera\ unNomeMedico
+comment6.target=void\ aggPaziente(int,\ java.lang.String)
+comment7.params=unNumeroTessera
+comment7.target=boolean\ exists(int)
+comment8.params=unNomeMedico
+comment8.target=java.util.ArrayList\ listaMedico(java.lang.String)
+comment9.params=
+comment9.target=Medico\ statMedico()
+numComments=13

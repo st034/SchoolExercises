@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Paziente
+comment1.params=tesseraSanitaria\ medicoCurante
+comment1.target=Paziente(int,\ Medico)
+comment2.params=
+comment2.target=int\ getTesseraSanitaria()
+comment3.params=
+comment3.target=Medico\ getMedicoCurante()
+comment4.params=newMedico
+comment4.target=void\ setMedicoCurante(Medico)
+comment5.params=
+comment5.target=java.lang.String\ toString()
+numComments=6

@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=BotteDiVino
+comment1.params=
+comment1.target=BotteDiVino()
+comment2.params=
+comment2.target=boolean\ isEmpty()
+comment3.params=nome
+comment3.target=void\ bevi(java.lang.String)
+comment4.params=nome
+comment4.target=void\ libera(java.lang.String)
+comment5.params=
+comment5.target=void\ setCondition()
+comment6.params=
+comment6.target=boolean\ getCondition()
+numComments=7

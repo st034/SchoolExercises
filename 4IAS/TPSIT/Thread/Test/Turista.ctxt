@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Turista
+comment1.params=nome\ monitor
+comment1.target=Turista(java.lang.String,\ Museo)
+comment2.params=
+comment2.target=void\ run()
+numComments=3

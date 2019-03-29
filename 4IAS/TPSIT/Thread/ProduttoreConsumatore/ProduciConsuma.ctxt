@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=ProduciConsuma
+comment0.text=\r\n\ Aggiungi\ qui\ una\ descrizione\ della\ classe\ ProduciConsuma\r\n\ \r\n\ @author\ Kleb\ \r\n\ @version\ 0\r\n
+comment1.params=
+comment1.target=java.lang.Boolean\ getCondition()
+comment2.params=
+comment2.target=void\ setCondition()
+comment3.params=el
+comment3.target=void\ metti(int)
+comment4.params=
+comment4.target=int\ preleva()
+numComments=5

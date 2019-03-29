@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Medico
+comment1.params=nominativo
+comment1.target=Medico(java.lang.String)
+comment2.params=
+comment2.target=java.lang.String\ getNominativo()
+comment3.params=m
+comment3.target=boolean\ equals(Medico)
+comment4.params=
+comment4.target=java.lang.String\ toString()
+numComments=5

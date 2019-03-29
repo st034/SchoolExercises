@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.target=Nodo
+comment1.params=info\ next
+comment1.target=Nodo(int,\ Nodo)
+numComments=2
