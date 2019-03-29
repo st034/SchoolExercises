@@ -1,10 +1,6 @@
-# Esperia's student share his own school's exercises
+# Repo provided by Dodesini Giorgio
 ___
+* ## What is this repo? 
+    This repo contains some school exercises and we share them with all team
 
-    There are a lot of exercises about OOP programming in JAVA and some VB scripts.
-___
-
-    For informations or questions send an email to: giorgio.dodesini.it@gmail.com
-
-___
-_Thanks_ 
+_Have fun_
