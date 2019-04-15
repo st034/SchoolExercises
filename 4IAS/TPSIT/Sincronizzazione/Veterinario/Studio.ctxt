@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Studio
+comment1.params=nome
+comment1.target=void\ libera(java.lang.String)
+comment2.params=nome
+comment2.target=void\ occupa(java.lang.String)
+numComments=3
