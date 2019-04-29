@@ -109,14 +109,70 @@ public class Albero{
 		if(root==null){
 			return 0;
 		}else{
-			return noOfElements(root,1);
+			return noOfElements(root);
 		}
 	}
-	private int noOfElements(Nodo root, int count){
+	private int noOfElements(Nodo root){
 		if(root==null){
 			return 0;
 		}else{
-			return 1+noOfElements(root.sx, 1+noOfElements(root.dx, count));
+			return 1+(noOfElements(root.sx)+noOfElements(root.dx));		
+		}
+	}
+	public void bracketsPrint(){
+		if(root==null){
+			System.out.println("()");
+		}else{
+			System.out.print("(");
+			bracketsPrint(root);
+		}
+	}
+	private void bracketsPrint(Nodo root){
+		System.out.print(root.info);
+		if(root.sx!=null){
+			System.out.print("(");
+			bracketsPrint(root.sx);
+		}else{
+			System.out.print("(--");
+		}
+		if(root.dx!=null){
+			System.out.print(", ");
+			bracketsPrint(root.dx);
+			System.out.print(")");
+		}else{
+			System.out.print(", --)");
+		}
+	}
+	public void indentPrint(){
+		if(root==null){
+			System.out.println("Tree Empty");
+		}else{
+			indentPrint(root, 0);
+		}
+	}
+	private void indentPrint(Nodo root, int space){
+		System.out.println(root.info);
+		if(root.sx!=null){
+			for(int i=0; i<=space;i++){
+				System.out.print("  ");
+			}
+			indentPrint(root.sx, space+1);
+		}else{
+			for(int i=0; i<=space;i++){
+				System.out.print("  ");
+			}
+			System.out.println("--");
+		}
+		if(root.dx!=null){
+			for(int i=0; i<=space;i++){
+				System.out.print("  ");
+			}
+			indentPrint(root.dx, space+1);
+		}else{
+			for(int i=0; i<=space;i++){
+				System.out.print("  ");
+			}
+			System.out.println("--");
 		}
 	}
 }
