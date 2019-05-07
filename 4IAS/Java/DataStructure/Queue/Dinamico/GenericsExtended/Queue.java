@@ -36,12 +36,4 @@ public class Queue<T extends Number>{
     		throw new NullPointerException("Queue Empty");
     	}
     }
-    public static void main(String[] args){
-    	Queue<Integer> c=new Queue<Integer>();
-    	c.enqueue(20);
-    	c.enqueue(40);
-    	System.out.println(c.dequeue());
-    	System.out.println(c.dequeue());
-    }
-    
 }

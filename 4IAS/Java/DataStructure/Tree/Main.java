@@ -11,7 +11,8 @@ public class Main{
 		a.bracketsPrint();
 		System.out.println();
 		a.indentPrint();
-	
-		
+		a.brePreorder();
+		System.out.println();
+		a.breInorder();
 	}
 }

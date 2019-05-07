@@ -8,8 +8,8 @@ cond = false
 
 For Each unita In unita_di_massa
 	if unita.IsReady and cond=false then
-		snumb = ""&unita.SerialNumber
-		if snumb = "1920160989" then
+		dvname = ""&unita.VolumeName
+		if dvname = "DODE88" then
 			volume = ""&unita.DriveLetter
 			cond = true
 		end if

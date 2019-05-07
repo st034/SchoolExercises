@@ -1,0 +1,1 @@
+creare una cartella sul desktop chiamata "cartellaDaSalvare" per far funzionare il programma

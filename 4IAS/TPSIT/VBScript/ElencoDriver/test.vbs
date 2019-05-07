@@ -4,8 +4,8 @@ Set fso = CreateObject("Scripting.FileSystemObject")
 Set unita_di_massa = fso.drives
 For Each unita In unita_di_massa
 	if unita.IsReady then
-		dettaglio = ""&unita.SerialNumber
-		if dettaglio = "1920160989" then
+		dettaglio = ""&unita.VolumeName
+		if dettaglio = "DODE88" then
 			msgbox unita.DriveLetter
 		end if
 	end if

@@ -1,5 +1,7 @@
+import java.util.ArrayList;
+import java.util.Stack;
 public class Albero{
-	Nodo root;
+	Node root;
 	int count;
 	public Albero(){
 		root=null;
@@ -7,21 +9,21 @@ public class Albero{
 	}
 	public void insertElement(int info){
 		if(root==null){
-			root=new Nodo(info, null, null);
+			root=new Node(info, null, null);
 		}else{
 			insertElement(info, root);
 		}
 	}
-	private void insertElement(int info, Nodo root){
+	private void insertElement(int info, Node root){
 		if(info<root.info){
 			if(root.sx==null){
-				root.sx=new Nodo(info, null, null);
+				root.sx=new Node(info, null, null);
 			}else{
 				insertElement(info, root.sx);
 			}
 		}else{
 			if(root.dx==null){
-				root.dx=new Nodo(info, null, null);
+				root.dx=new Node(info, null, null);
 			}else{
 				insertElement(info, root.dx);
 			}
@@ -30,7 +32,7 @@ public class Albero{
 	public void inOrder(){
 		inOrder(root);
 	}
-	private void inOrder(Nodo root){
+	private void inOrder(Node root){
 		if(root!=null){
 			inOrder(root.sx);
 			count++;
@@ -40,7 +42,7 @@ public class Albero{
 	public void postOrder(){
 		postOrder(root);
 	}
-	private void postOrder(Nodo root){
+	private void postOrder(Node root){
 		if(root!=null){
 			postOrder(root.sx);
 			postOrder(root.dx);
@@ -50,7 +52,7 @@ public class Albero{
 	public void preOrder(){
 		preOrder(root);
 	}
-	private void preOrder(Nodo root){
+	private void preOrder(Node root){
 		if(root!=null){
 			System.out.println(root.info);
 			preOrder(root.sx);
@@ -64,7 +66,7 @@ public class Albero{
 			return exists(el, root);
 		}
 	}
-	private boolean exists(int el, Nodo root){
+	private boolean exists(int el, Node root){
 		if(root==null){
 			return false;
 		}else if(root.info==el){
@@ -91,7 +93,7 @@ public class Albero{
 			return depth(root);
 		}
 	}
-	private int depth(Nodo root){
+	private int depth(Node root){
 		if(root==null){
 			return 0;
 		}else{
@@ -112,7 +114,7 @@ public class Albero{
 			return noOfElements(root);
 		}
 	}
-	private int noOfElements(Nodo root){
+	private int noOfElements(Node root){
 		if(root==null){
 			return 0;
 		}else{
@@ -127,7 +129,7 @@ public class Albero{
 			bracketsPrint(root);
 		}
 	}
-	private void bracketsPrint(Nodo root){
+	private void bracketsPrint(Node root){
 		System.out.print(root.info);
 		if(root.sx!=null){
 			System.out.print("(");
@@ -150,7 +152,7 @@ public class Albero{
 			indentPrint(root, 0);
 		}
 	}
-	private void indentPrint(Nodo root, int space){
+	private void indentPrint(Node root, int space){
 		System.out.println(root.info);
 		if(root.sx!=null){
 			for(int i=0; i<=space;i++){
@@ -173,6 +175,76 @@ public class Albero{
 				System.out.print("  ");
 			}
 			System.out.println("--");
+		}
+	}
+	/*public void brePreorder(){
+		try{
+			ArrayList<Node> q = new ArrayList();
+			Node tmp = this.root;
+			if(tmp != null){
+				q.add(tmp);
+				while(!q.isEmpty()){
+					tmp = q.get(0);
+					q.remove(0);
+					System.out.println(tmp.info);
+					if(tmp.sx!=null){
+						q.add(tmp.sx);
+					}
+					if(tmp.dx!=null){
+						q.add(tmp.dx);
+					}
+				}
+			}
+		}catch(Exception e){
+			throw new RuntimeException(e);
+		}
+	}*/
+	public void brePreorder(){
+		Stack<Node> s = new Stack();
+		Node tmp = root;
+		if(tmp!=null){
+			s.push(tmp);
+			while(!s.isEmpty()){
+				if(tmp.dx!=null){
+					s.push(tmp.dx);
+				}
+				if(tmp.sx!=null){
+					s.push(tmp.sx);
+				}
+				System.out.println(tmp.info);
+				tmp=s.pop();
+			}
+		}
+	}
+	public void breadthFirst(){
+		ArrayList<Node> q = new ArrayList();
+		Node tmp = root;
+		if(tmp!=null){
+			q.add(tmp);
+			while(!q.isEmpty()){
+				tmp=q.get(0);
+				q.remove(0);
+				System.out.println(tmp.info);
+				if(tmp.sx!=null)q.add(tmp.sx);
+				if(tmp.dx!=null)q.add(tmp.dx);
+			}
+		}
+	}
+	public void breInorder(){
+		Stack<Node> s = new Stack();
+		Node tmp = root;
+		if(tmp!=null){
+			s.push(tmp);
+			while(!s.isEmpty()){
+				if(tmp.dx!=null){
+					s.push(tmp.dx);
+				}
+				if(tmp.sx!=null){
+					s.push(tmp.sx);
+				}
+				tmp = tmp.sx;
+				
+			}
 		}
 	}
 }
