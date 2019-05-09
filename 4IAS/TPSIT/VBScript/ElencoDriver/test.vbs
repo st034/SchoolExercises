@@ -10,5 +10,4 @@ For Each unita In unita_di_massa
 		end if
 	end if
 next
-
 Set fso=nothing

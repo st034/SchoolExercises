@@ -65,7 +65,7 @@ end if
 sub cerca(percorso,cosa_cercare,risultati,conteggio)
 	Set fso = CreateObject("Scripting.FileSystemObject")
 	Set oggetto_cartella=fso.GetFolder(percorso)
-
+	
 	for each file_trovato in oggetto_cartella.files
 		if instr(ucase(file_trovato.name),cosa_cercare)>0 then
 			conteggio=conteggio+1
