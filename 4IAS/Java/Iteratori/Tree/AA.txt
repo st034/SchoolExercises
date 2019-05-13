@@ -1,0 +1,27 @@
+import java.util.Iterator;
+public class AlberoIterator implements Iterator{
+	Stack<Node> stack;
+	public AlberoIterator(AlberoIterable tree){
+		Node treeRoot = tree.root;
+		stack = new Stack<Node>();
+		while(treeRoot != null){
+			stack.push(treeRoot);
+			treeRoot=treeRoot.sx;
+		}
+	}
+	public boolean hasNext(){
+		return !stack.isEmpty();
+	}
+	public Object next(){
+		Node treeNode = stack.pop();
+		int info = treeNode.info;
+		if(treeNode.dx!=null){
+			treeNode = treeNode.dx;
+			while(treeNode != null){
+				stack.push(treeNode);
+				treeNode = treeNode.sx;
+			} 
+		}
+		return info;
+	}
+}
