@@ -1,4 +1,4 @@
-dim fso, shello, objFolder, subf, space, folderPath, objFile, fileCounter, showFiles
+dim fso, shello, objFolder, subf, space, folderPath, objFile, fileCounter, showFiles, spaceAdd
 Set fso = createObject("Scripting.FileSystemObject")
 Set shello = createObject("WScript.Shell")
 Set file = fso.createtextfile("result.txt", true)
@@ -8,6 +8,8 @@ fileCounter=0
 
 showFiles = msgbox ("Vuoi visualizzare anche i files?",vbYesNo)
 
+spaceAdd = "       " 'add space here to add more space before subfolders
+
 for each objFile in objFolder.Files
     fileCounter = fileCounter+1
 next
@@ -15,10 +17,10 @@ next
 file.write folderPath&" "&"(file: "&fileCounter&")"&vbcrlf
 
 if showFiles = vbYes then
-    navigateFiles objFolder, file, "     "
+    navigateFiles objFolder, file, spaceAdd
 end if
 
-navigateFolders objFolder, file, "     ", 0
+navigateFolders objFolder, file, spaceAdd, 0
 
 file.close
 
@@ -29,9 +31,9 @@ sub navigateFolders(folder, file, space, fileCounter)
         next
         file.write space&subf.name&" "&"(file: "&fileCounter&")"&vbcrlf
         if showFiles = vbYes then
-            navigateFiles subf, file, space&"     "
+            navigateFiles subf, file, space&spaceAdd
         end if
-        navigateFolders subf, file, space&"     ", 0
+        navigateFolders subf, file, space&spaceAdd, 0
     next
 end sub
 
