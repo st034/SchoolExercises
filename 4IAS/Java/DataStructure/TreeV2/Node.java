@@ -7,4 +7,5 @@ public class Node{
 		this.sx=sx;
 		this.dx=dx;
 	}
+	public Node(){}
 }

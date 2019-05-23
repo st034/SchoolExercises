@@ -1,20 +1,29 @@
-
+import java.util.Stack;
 public class Albero{
 	Node root;
-	public Albero(){
-		root	=	new Node("*",
-						new Node("+",
-							new Node("6", null, null),
-							new Node("+",
-								new Node("4", null, null),
-								new Node("2", null, null)
-							)
-						),
-						new Node("+",
-							new Node("4", null, null),
-							new Node("5", null, null)
-						)
-					);
+	Stack stack;
+	public Albero(String expression){		
+		stack = new Stack();
+		fillStack(expression);
+		for(int i=0; i<expression.length(); i++){
+			System.out.println(stack.pop());
+		}
+	}
+	private void fillStack(String expr){
+		for(int i=0; i<expr.length(); i++){
+			if(isInteger(""+expr.charAt(i))){
+				stack.push(expr.charAt(i));
+			}else if(isOperand(expr.charAt(i))){
+				stack.push(expr.charAt(i));
+			}
+		}
+	}
+	private boolean isOperand(char c){
+		if(c == '+'||c == '-' || c == '*' || c == '/'){
+			return true;
+		}else{
+			return false;
+		}
 	}
 	public Integer eval(){
 		return eval(root);

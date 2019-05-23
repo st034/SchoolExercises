@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Client
+comment1.params=
+comment1.target=Client()
+comment2.params=
+comment2.target=void\ run()
+comment3.params=s\ out
+comment3.target=void\ close(java.net.Socket,\ java.io.PrintWriter)
+numComments=4
