@@ -1,0 +1,27 @@
+C:\Users\ZZROT\Desktop\Evogy (file: 4)
+     02 07 18 Elenco periferiche monitoraggio consumi.xlsx
+     info.txt
+     Modbus_Electrex_1.2.16.xls
+     todo.txt
+     DocImpianti (file: 0)
+          Fiordaliso (file: 3)
+               AS01 UTA Fiordaliso.pdf
+               AS02 Integrazione KNX.pdf
+               AS03 Centrale Caldo-Freddo Fiordaliso.pdf
+          IngGesco (file: 3)
+               Kronoterm e Fast (file: 2)
+                    22-16-17-4021-01_Modbus_BMS_TT3000web_ENG.pdf
+                    parametri_variabili ModBus_HRR.xls
+               Lovato (file: 5)
+                    DME CD modbus.pdf
+                    DMED330 modbus.pdf
+                    Lovato.pdf
+               SolarEdge (file: 6)
+                    se_monitoring_api.pdf
+          Iveco (file: 5)
+               DeviceIveco.txt
+               IngGesco_PMTExport.csv
+               IvecoHSTDB (file: 1)
+                    history.zip
+     img (file: 1)
+          roomIcon.png
