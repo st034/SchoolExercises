@@ -20,6 +20,8 @@ end if
 
 navigateFolders objFolder, file, "     ", 0
 
+file.close
+
 sub navigateFolders(folder, file, space, fileCounter)
     for each subf in folder.SubFolders
         for each objFile in subf.Files
