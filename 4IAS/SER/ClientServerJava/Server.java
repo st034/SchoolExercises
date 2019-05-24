@@ -11,9 +11,9 @@ public class Server extends Thread{
             ServerSocket serverSocket = new ServerSocket(PORT);
             System.out.println("Server started: "+serverSocket);
             while(true){
-            System.out.println("Server ready for new connection");
-            Socket clientSocket = null;
-            BufferedReader in = null;
+            	System.out.println("Server ready for new connection");
+            	Socket clientSocket = null;
+            	BufferedReader in = null;
             
                 clientSocket = serverSocket.accept();
                 System.out.println("Connection accepted: "+clientSocket);
@@ -26,17 +26,27 @@ public class Server extends Thread{
                     if(s.equals("end"))
                         break;
                     else
-                        System.out.println(s);
+                        System.out.print(s+"\n");
                 }
                 System.out.println("Server closing");
                 close(in, clientSocket);
             }
         }catch(Exception e){
-                throw new RuntimeException("Accept failed");
+        	throw new RuntimeException("Accept failed");
         }
     }
     public void close(BufferedReader r, Socket s)throws IOException{
         r.close();
         s.close();
     }
+}
+class ServerMain{
+	public static void main(String[] args){
+		try{
+			new Server();
+		}catch(Exception e){
+			throw new RuntimeException(e);
+		}
+		
+	}
 }

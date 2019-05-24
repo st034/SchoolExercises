@@ -2,11 +2,10 @@ import java.util.Scanner;
 public class Main{
     public static void main(String[] args){
         try{
-            new Server();
             Scanner scn = new Scanner(System.in);
             String in;
             while(true){    
-                System.out.println("Avviare un client socket?");
+                System.out.println("Avviare un client socket?(y/n)");
                 in = scn.nextLine();
                 if(in.equals("n")){
                     break;

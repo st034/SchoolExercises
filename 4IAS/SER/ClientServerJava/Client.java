@@ -1,9 +1,9 @@
 import java.io.*;
 import java.net.*;
 import java.util.*;
-public class Client extends Thread{
+public class Client{
     public Client()throws IOException{
-        this.start();
+        this.run();
     }
     public void run(){
         Socket socket = null;
