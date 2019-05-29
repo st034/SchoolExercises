@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=AstaClient
+comment1.params=
+comment1.target=AstaClient()
+comment2.params=
+comment2.target=void\ setupSocket()
+comment3.params=rilancio
+comment3.target=void\ inviaRilancio(int)
+comment4.params=command
+comment4.target=void\ inviaComando(int)
+comment5.params=
+comment5.target=void\ esci()
+comment6.params=
+comment6.target=void\ ricevi()
+numComments=7
