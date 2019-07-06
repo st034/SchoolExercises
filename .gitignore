@@ -1,2 +1,4 @@
 *.class
+credentials.csv
+AWS_account.txt
 EfergyData
