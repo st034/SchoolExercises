@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>ElectronixStore</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="./script.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>ElectronixStore</h1>
+      <h3>Sign In:</h3>
+      <form name="userinfo">
+        First Name:<br>
+        <input type="text" name="firstname" placeholder="First name"><br>
+        Last Name:<br>
+        <input type="text" name="lastname" placeholder="Last name"><br>
+        Birthday:<br>
+        <input type="date" id="birthday" value="2019-01-01"><br>
+        Gender:<br>
+        <input type="radio" name="gender" value="Male" checked>Male<br>
+        <input type="radio" name="gender" value="Female">Female<br>
+        <button type="button" onclick="register()">Submit</button>
+      </form>
+    </div>    
+  </body>
+</html>

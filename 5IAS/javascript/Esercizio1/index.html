@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Clock</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="script.js"></script>
+  </head>
+  <body onload=reset()>
+    <h1>Clock</h1>
+    <div id="app">
+      <form name="form" onsubmit="return setTime()">
+        <label for="time">Wake up at:</label>
+        <input type="datetime-local" id="time" name="wakeuptime" step="1"><br>
+        <div>
+          <button type="button" class="button" onclick="setTime()"><span>Submit</span></button>
+        </div>
+        <div style=margin-top:10px>
+          <button type="button" class="button" onclick="location.reload()" ><span>Reset</span></button>
+        </div>
+      </form>
+    </div>
+    <div id="div">
+      <p id="wakeupat"></p>
+    </div>
+  </body>
+</html>

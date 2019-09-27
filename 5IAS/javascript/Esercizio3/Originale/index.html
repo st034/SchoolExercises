@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div id="intestazione">
+      <h1>Citazioni</h1>
+    </div>
+    <div id="citazioni">
+      <h2>Cosa disse</h2>
+      <form name="form">
+        <input type="radio" name="person" id="sigmudfreud" value="sigmudfreud" checked><label for="sigmudfreud">...Sigmud Freud</label><p id="0"></p>
+        <input type="radio" name="person" id="napoleonebonaparte" value="napoleonebonaparte"><label for="napoleonebonaparte">...Napoleone Bonaparte</label><p id="1"></p>
+        <input type="radio" name="person" id="riccardoiii" value="riccardoiii"><label for="riccardoiii">...Riccardo III</label><p id="2"></p>
+        <input type="radio" name="person" id="cesarepavese" value="cesarepavese"><label for="cesarepavese">...Cesare Pavese</label><p id="3"></p>
+        <input type="radio" name="person" id="salomone" value="salomone"><label for="salomone">...Salomone</label><p id="4"></p>
+        <input type="radio" name="person" id="oscarwilde" value="oscarwilde"><label for="oscarwilde">...Oscar Wilde</label><p id="5"></p>
+        <input type="button" onclick="getPhrase()" value="Get phrase!">
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
