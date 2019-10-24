@@ -1,4 +1,5 @@
 *.class
+.vscode/
 credentials.csv
 AWS_account.txt
 EfergyData
