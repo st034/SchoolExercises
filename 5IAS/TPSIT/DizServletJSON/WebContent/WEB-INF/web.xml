@@ -1,0 +1,26 @@
+<web-app>
+    <display-name>BeginnersBookServlet</display-name>
+    <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+</welcome-file-list>
+
+<servlet>
+    <servlet-name>MyHttpServlet</servlet-name>
+    <servlet-class>App</servlet-class>
+    <init-param>
+        <param-name>mymsg</param-name>
+        <param-value>Execise1 - External parameters</param-value>
+    </init-param>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>MyHttpServlet</servlet-name>
+    <url-pattern>/welcome</url-pattern>
+</servlet-mapping>
+
+</web-app>
