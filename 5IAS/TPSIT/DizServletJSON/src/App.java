@@ -13,16 +13,23 @@ public class App extends HttpServlet{
     
     private static final long serialVersionUID = -3967314453512919811L;
     private JSONObject jsonObject;
-    private static final String filename= "C:/Users/GioDots/Code/dodesini/5IAS/TPSIT/DizServletJSON/dictionary.json";
+    private static File file;
     
     public static void main(String[] args) throws Exception {
         System.out.println("Hello Java 1");
+        
     }
 
     public void init() throws ServletException {
         try{
+            file = new File("dictionary.json");
+            if(file.createNewFile()){
+                FileWriter fw = new FileWriter(file);
+                fw.write("{}");
+                fw.close();
+            }
             JSONParser parser = new JSONParser();
-            FileReader reader = new FileReader(filename);
+            FileReader reader = new FileReader(file);
             jsonObject = (JSONObject) parser.parse(reader);
         }catch(IOException e){
             throw new RuntimeException(e);
@@ -53,6 +60,11 @@ public class App extends HttpServlet{
         res.setCharacterEncoding("UTF-8");
         modifyWord(req, res);
     }
+    public void doDelete(HttpServletRequest req, HttpServletResponse res) throws IOException {
+        res.setContentType("application/json");
+        res.setCharacterEncoding("UTF-8");
+        removeWord(req, res);
+    }
     private void returnMeaning(HttpServletRequest req, HttpServletResponse res, String word) throws IOException{
         PrintWriter out = res.getWriter();
         JSONArray result = (JSONArray) jsonObject.get(word.toLowerCase());
@@ -76,9 +88,9 @@ public class App extends HttpServlet{
             jsonObject.put(word, arr);
             result.put(word, arr);
         }
-        try (FileWriter file = new FileWriter(filename)) {
-            file.write(jsonObject.toJSONString());
-            file.close();
+        try (FileWriter fw = new FileWriter(file)) {
+            fw.write(jsonObject.toJSONString());
+            fw.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -97,9 +109,9 @@ public class App extends HttpServlet{
             JSONObject obj = new JSONObject();
             obj.put(word, arr);
             jsonObject.replace(word.toLowerCase(), arr);
-            try (FileWriter file = new FileWriter(filename)) {
-                file.write(jsonObject.toJSONString());
-                file.close();
+            try (FileWriter fw = new FileWriter(file)) {
+                fw.write(jsonObject.toJSONString());
+                fw.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }   
@@ -109,5 +121,24 @@ public class App extends HttpServlet{
             obj.put("result", "word not found");
             out.println(obj);
         }
+    }
+    private void removeWord(HttpServletRequest req, HttpServletResponse res) throws IOException {
+        String word = req.getParameter("word");
+        JSONArray oldResult = (JSONArray) jsonObject.get(word);
+        JSONObject result = new JSONObject();
+        PrintWriter out = res.getWriter();
+        if(oldResult != null){
+            jsonObject.remove(word);
+            result.put(word, oldResult);
+            try (FileWriter fw = new FileWriter(file)) {
+                fw.write(jsonObject.toJSONString());
+                fw.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }else{
+            result.put("status", "Word not found");
+        }
+        out.println(result);
     }
 }
