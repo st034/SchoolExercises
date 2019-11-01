@@ -22,7 +22,6 @@ public class ChecksumFile {
         byte[] hash = digest.digest();
         return new BASE64Encoder().encode(hash);
     } 
-    // Driver code 
     public static void main(String args[]) throws NoSuchAlgorithmException 
     { 
         Scanner scn = new Scanner(System.in);
