@@ -39,7 +39,6 @@ public class App extends HttpServlet{
     }
 
     public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException{
-        // Setting up the content type of web page
         res.setContentType("application/json");
         res.setCharacterEncoding("UTF-8");
         String word = req.getParameter("word");
