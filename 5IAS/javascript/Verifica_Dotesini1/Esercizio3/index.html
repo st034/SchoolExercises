@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Esercizio3</title>
+        <script src="script.js"></script>
+        <link href="style.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body onload="setDate()">
+        <form name="dati">
+            <input type="text" id="nomecognome" name="nomecognome" placeholder="Nome e Cognome"><br><br>
+            <input type="text" name="luogonascita" placeholder="Luogo di nascita"><br><br>
+            <input type="date" name="datanascita"> Data di nascita<br><br>
+            <input type="text" name="gender" placeholder="Genere"><br><br>
+            <input type="text" name="residenza" placeholder="Luogo di residenza"><br><br>
+            <input type="text" name="lavoro" placeholder="Professione"><br><br>
+            <input type="text" id="richiesta" name="richiesta" placeholder="Richiesta"><br><br>
+            <input type="date" name="dataodierna"> Data odierna<br><br>
+            <button type="button" onclick="setData()">Submit</button><br><br>
+        </form>
+        <div id="modulo"></div>
+        <p id="error"></p>
+    </body>
+</html>
