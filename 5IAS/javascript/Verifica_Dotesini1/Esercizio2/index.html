@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Esercizio2</title>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <form name="dati">
+            <input type="text" id="name" name="nome" placeholder="Nome"><br><br>
+            <input type="text" id="surname" name="cognome" placeholder="Cognome"><br><br>
+            <input type="radio" name="gender" value="male" checked>Maschio<br>
+            <input type="radio" name="gender" value="female">Femmina<br><br>
+            <input type="text" id="voto" name="votodiploma" placeholder="Voto diploma" ><br><br>
+            <input type="text" id="birthday" name="birthdaydate" placeholder="Anno di nascita: aaaa"><br><br><!--c'è scritto solo anno di nascita non giorno, mese e anno-->
+            <h4>Corso di Interesse</h4>
+            <input type="radio" name="course" value="informatica" checked>Informatica<br>
+            <input type="radio" name="course" value="giurisprudenza">Giurisprudenza<br>
+            <input type="radio" name="course" value="economiacommercio">Economia & Commercio<br><br>    
+            <button type="button" onclick="setData()">Submit</button>
+        </form>
+        <p id="error"></p>
+    </body>
+</html>
