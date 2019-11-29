@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.json.simple.JSONObject;;
 
+/*** NOTA: CODICE DECISAMENTE MIGLIORABILE, POCO TEMPO PER FARLO ***/
+
 @WebServlet(name = "MyServlet", urlPatterns = { "/dizionario" })
 public class Servlet extends HttpServlet {
 
@@ -26,6 +28,34 @@ public class Servlet extends HttpServlet {
             }
         } catch (Exception e) {
             throw new RuntimeException(e);
+        }
+        out.close();
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        ServletOutputStream out = resp.getOutputStream();
+        String statement = "update Dizionario set word='" + req.getParameter("word").toLowerCase() + "', meaning='"
+                + req.getParameter("meaning") + "' where word='" + req.getParameter("word").toLowerCase() + "'";
+        String query = "select * from dizionario where word='" + req.getParameter("word").toLowerCase() + "'";
+        boolean wordExists = false;
+        ResultSet result = performQuery(query);
+        try {
+            while (result.next()) {
+                if (result.getString("word") != null) {
+                    wordExists = true;
+                }
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        if (wordExists) {
+            performUpdate(statement);
+            JSONObject jsonResponse = new JSONObject();
+            jsonResponse.put(req.getParameter("word").toLowerCase(), req.getParameter("meaning"));
+            out.println(jsonResponse.toJSONString());
+        } else {
+            out.println("{'status': 'word doesn't exists'}");
         }
         out.close();
     }
@@ -48,7 +78,7 @@ public class Servlet extends HttpServlet {
             throw new RuntimeException(e);
         }
         if (!wordExists) {
-            performInsert(statement);
+            performUpdate(statement);
             JSONObject jsonResponse = new JSONObject();
             jsonResponse.put(req.getParameter("word").toLowerCase(), req.getParameter("meaning"));
             out.println(jsonResponse.toJSONString());
@@ -59,7 +89,7 @@ public class Servlet extends HttpServlet {
         out.close();
     }
 
-    private void performInsert(String st) {
+    private void performUpdate(String st) {
         try {
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
             Connection connection = DriverManager.getConnection(
