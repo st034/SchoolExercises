@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="height: 100%;">
 
 <head>
     <meta charset="UTF-8">
@@ -10,28 +10,32 @@
     <title>Dizionario</title>
 </head>
 
-<body>
-    <div class="container">
-        <div class="shadow p-3 mb-5 bg-white rounded">
-            <h1 class="display-4">Dizionario</h1>
-            <form action="dizionario.php" method="POST">
-                <div class="form-group">
-                    <label for="word">Parola</label>
-                    <input class="form-control" type="text" placeholder="Parola" name="word" id="word">
+<body style="height: 100%;">
+    <div class="container-fluid h-100">
+        <div class="row justify-content-center align-middle h-100">
+            <div class="col-10 align-self-center">
+                <div class="shadow p-3 mb-5 bg-white rounded">
+                    <h1 class="display-4">Dizionario</h1>
+                    <form action="dizionario.php" method="POST">
+                        <div class="form-group">
+                            <label for="word">Parola</label>
+                            <input class="form-control" type="text" placeholder="Parola" name="word" id="word">
+                        </div>
+                        <div class="form-group">
+                            <label for="option">Seleziona l'operazione da effettuare</label>
+                            <select class="form-control" name="option" id="option" onchange="showTextArea()">
+                                <option value="get">Cerca parola</option>
+                                <option value="put">Aggiungi Parola</option>
+                                <option value="post">Modifica Parola</option>
+                                <option value="delete">Elimina Parola</option>
+                            </select>
+                        </div>
+                        <div class="form-group" id="meaningArea">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <label for="option">Seleziona l'operazione da effettuare</label>
-                    <select class="form-control" name="option" id="option" onchange="showTextArea()">
-                        <option value="get">Cerca parola</option>
-                        <option value="put">Aggiungi Parola</option>
-                        <option value="post">Modifica Parola</option>
-                        <option value="delete">Elimina Parola</option>
-                    </select>
-                </div>
-                <div class="form-group" id="meaningArea">
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
+            </div>
         </div>
     </div>
     <script>
